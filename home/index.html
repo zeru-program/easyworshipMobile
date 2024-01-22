@@ -1,0 +1,1693 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Easyworship mobile</title>
+        <link rel="icon" href="ew.png" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+        <link
+            rel="stylesheet"
+            href="responsive.css"
+            type="text/css"
+            media="all"
+        />
+        <script src="song.js"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+    </head>
+
+    <body onload="oP()">
+        <nav class="navbar">
+            <div class="menu-icon" onclick="nav()">
+                <div class="bar"></div>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+            </div>
+            <button id="goLive" onclick="goLiveAct()">Go Live</button>
+            <ul class="nav-links">
+                <label id="closeNav">X</label>
+                <label id="openSetting"
+                    ><svg
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1.5em"
+                        width="1.5em"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M27.3 44h-6.6q-.55 0-.975-.35-.425-.35-.525-.9l-.8-5.05q-.95-.35-2-.95t-1.85-1.25L9.9 37.65q-.55.25-1.1.075T7.95 37l-3.3-5.85q-.3-.5-.15-1.05t.6-.9l4.3-3.15q-.1-.45-.125-1.025Q9.25 24.45 9.25 24q0-.45.025-1.025T9.4 21.95L5.1 18.8q-.45-.35-.6-.9-.15-.55.15-1.05L7.95 11q.3-.55.85-.725.55-.175 1.1.075l4.65 2.15q.8-.65 1.85-1.25t2-.9l.8-5.1q.1-.55.525-.9Q20.15 4 20.7 4h6.6q.55 0 .975.35.425.35.525.9l.8 5.05q.95.35 2.025.925Q32.7 11.8 33.45 12.5l4.65-2.15q.55-.25 1.1-.075t.85.725l3.3 5.8q.3.5.175 1.075t-.625.925l-4.3 3.05q.1.5.125 1.075.025.575.025 1.075t-.025 1.05q-.025.55-.125 1.05l4.3 3.1q.45.35.6.9.15.55-.15 1.05L40.05 37q-.3.55-.85.725-.55.175-1.1-.075l-4.65-2.15q-.8.65-1.825 1.275-1.025.625-2.025.925l-.8 5.05q-.1.55-.525.9-.425.35-.975.35ZM24 30.5q2.7 0 4.6-1.9 1.9-1.9 1.9-4.6 0-2.7-1.9-4.6-1.9-1.9-4.6-1.9-2.7 0-4.6 1.9-1.9 1.9-1.9 4.6 0 2.7 1.9 4.6 1.9 1.9 4.6 1.9Zm0-3q-1.45 0-2.475-1.025Q20.5 25.45 20.5 24q0-1.45 1.025-2.475Q22.55 20.5 24 20.5q1.45 0 2.475 1.025Q27.5 22.55 27.5 24q0 1.45-1.025 2.475Q25.45 27.5 24 27.5Zm0-3.5Zm-2.2 17h4.4l.7-5.6q1.65-.4 3.125-1.25T32.7 32.1l5.3 2.3 2-3.6-4.7-3.45q.2-.85.325-1.675.125-.825.125-1.675 0-.85-.1-1.675-.1-.825-.35-1.675L40 17.2l-2-3.6-5.3 2.3q-1.15-1.3-2.6-2.175-1.45-.875-3.2-1.125L26.2 7h-4.4l-.7 5.6q-1.7.35-3.175 1.2-1.475.85-2.625 2.1L10 13.6l-2 3.6 4.7 3.45q-.2.85-.325 1.675-.125.825-.125 1.675 0 .85.125 1.675.125.825.325 1.675L8 30.8l2 3.6 5.3-2.3q1.2 1.2 2.675 2.05Q19.45 35 21.1 35.4Z"
+                        /></svg
+                ></label>
+                <div class="conPAW">
+                    <select id="songsIsi" onchange="tampilkanSong()">
+                        <option style="display: none">Pilih lagu</option>
+                        <option value="songs1">Kemenangan Atasku - NLY</option>
+                        <option value="songs2">Muda Hanya Sekali - NLY</option>
+                        <option value="songs3">Teramat Baik - NLY</option>
+                        <option value="songs4">
+                            Tuhan Diatas S'galanya - NLY
+                        </option>
+                        <option value="songs5">Karna Mu - JPCC</option>
+                        <option value="songs6">Kau Rajaku - JPCC</option>
+                    </select>
+                    <select id="songsIsi" onchange="tampilkanSong()">
+                        <option style="display: none">Pilih Ayat</option>
+                        <option disabled value="-">Coming soon!</option>
+                    </select>
+                </div>
+                <input
+                    type="file"
+                    id="mediaInput"
+                    accept="image/*, video/*"
+                    onchange="handleMediaChange()"
+                    style="display: none"
+                />
+                <label class="labelTemp">Template Background</label>
+                <div class="conBgT">
+                    <div
+                        id="bgTemplate"
+                        class="bgWhite"
+                        onclick="bgWhite()"
+                    ></div>
+                    <div
+                        id="bgTemplate"
+                        class="bgBlack"
+                        onclick="bgBlack()"
+                    ></div>
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg1Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg2Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg3Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg4Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg5Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg6Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg7Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg8Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg9Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg10Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg11Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg12Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg13Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/zeru-program/Assets/main/bg14Temp.jpg"
+                        id="bgTemplate"
+                        class="imgTemp"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="conBgT">
+                    <label for="mediaInput" id="mediaInputLabel">Impor</label>
+                    <input type="color" id="bgTemplate" class="colorTemp" />
+                </div>
+                <div class="conMusicDown">
+                    <ion-icon
+                        class="iconMusic"
+                        name="headset-outline"
+                    ></ion-icon
+                    ><label id="nameSongDown">choose the song first!</label>
+                </div>
+                <label class="reqSong"
+                    ><a
+                        href="https://wa.me/6287774487198?text=Hi%20Justine%20saya%20ingin%20request%20lagu%20..."
+                        >Request songs</a
+                    ></label
+                >
+                <label class="contact"
+                    >Contact Zeru or Justine <br />
+                    in
+                    <a
+                        href="mailto: zeruprogram@gmail.com?subject=FeedbackEasyworshipMobile"
+                        >Here !</a
+                    ><br /><br /><br />Easyworship Mobile v 1.0.5</label
+                >
+                <button id="help" onclick="helping()">?</button>
+            </ul>
+        </nav>
+
+      <div class="helping-popup">
+       <label> Click <a style="color: #416ee6;" onclick="toHelp()">here</a></label>
+        for tutorial how to use easyworship mobile by zeru <br>
+        <label style="color: #5a5a5a;">click anywhere to close popup</label>
+      </div>
+        <div class="containerSetting">
+            <label id="closeSetting">X</label>
+
+            <div class="con-opsi-setting">
+                <label id="opsi1">Live</label>
+                <label id="opsi2">Live Mini</label>
+                <label id="opsi3">Other</label>
+            </div>
+            <div class="con-isi-opsi">
+                <div class="isi-opsi1">
+                    <div class="side-left">
+                        <label>Live streaming</label>
+                        <label>Position text X</label>
+                        <label>Position text Y</label>
+                        <label>Margin top text live</label>
+                        <label>Margin bottom text live</label>
+                        <label>Margin left text live</label>
+                        <label>Margin right text live</label>
+                        <label>Font size</label>
+                        <label>Text shadow</label>
+                        <label>Text stroke</label>
+                        <label>Text color</label>
+                        <label>Text style</label>
+                        <label>Font adjust</label>
+                    </div>
+                    <div class="side-right">
+                        <div class="con-input">
+                            <input
+                                class="inputOpt ls-input"
+                                type="text"
+                                readonly
+                                value="Off"
+                            />
+                            <div class="option-lv">
+                                <div onclick="showLs('On')">On</div>
+                                <div onclick="showLs('Off')">Off</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt opx-input"
+                                type="text"
+                                readonly
+                                value="Center"
+                            />
+                            <div class="option-posX">
+                                <div onclick="showPx('Center')">Center</div>
+                                <div onclick="showPx('Left')">Left</div>
+                                <div onclick="showPx('Right')">Right</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt opy-input"
+                                type="text"
+                                readonly
+                                value="Center"
+                            />
+                            <div class="option-posY">
+                                <div onclick="showPy('Center')">Center</div>
+                                <div onclick="showPy('Top')">Top</div>
+                                <div onclick="showPy('Bottom')">Bottom</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt martop-input"
+                                type="number"
+                                value="0"
+                                onchange="marTtl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt marbottom-input"
+                                type="number"
+                                value="0"
+                                onchange="marBtl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt marleft-input"
+                                type="number"
+                                value="0"
+                                onchange="marLtl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt marright-input"
+                                type="number"
+                                value="0"
+                                onchange="marRtl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt fz-input"
+                                type="numberic"
+                                value="0"
+                                onchange="fzTl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="em"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt tshadow-input"
+                                type="numberic"
+                                value="0"
+                                onchange="fshTl()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt fs-input"
+                                type="text"
+                                readonly
+                                value="Unable"
+                            />
+                            <div class="option-Fs">
+                                <div onclick="showFs('Enable')">Enable</div>
+                                <div onclick="showFs('Unable')">Unable</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="tcolor-input"
+                                type="color"
+                                onchange="colorTL()"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt ff-input"
+                                type="text"
+                                readonly
+                                value="Default"
+                            />
+                            <div class="option-Ff">
+                                <div onclick="showFf('Default')">Default</div>
+                                <div onclick="showFf('Tahoma')">Tahoma</div>
+                                <div onclick="showFf('Poppins')">Poppins</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt fa-input"
+                                type="text"
+                                readonly
+                                value="Default"
+                            />
+                            <div class="option-Fa">
+                                <div onclick="boldTl()">
+                                    <b id="boldText">B</b>
+                                </div>
+                                <div onclick="italicTl()">
+                                    <i id="italicText">I</i>
+                                </div>
+                                <div onclick="underlineTl()">
+                                    <u id="underlineText">U</u>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reminder-click">
+                            Click or fill the box to interact
+                        </div>
+                    </div>
+                </div>
+                <div class="isi-opsi2">
+                    <div class="side-left">
+                        <label>Position text X</label>
+                        <label>Position text Y</label>
+                        <label>Font size</label>
+                        <label>Text shadow</label>
+                        <label>Text stroke</label>
+                        <label>Text color</label>
+                        <label>Text style</label>
+                    </div>
+                    <div class="side-right">
+                        <div class="con-input">
+                            <input
+                                class="inputOpt opxLm-input"
+                                type="text"
+                                readonly
+                                value="Center"
+                            />
+                            <div class="option-posXLm">
+                                <div onclick="showPxLm('Center')">Center</div>
+                                <div onclick="showPxLm('Left')">Left</div>
+                                <div onclick="showPxLm('Right')">Right</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt opyLm-input"
+                                type="text"
+                                readonly
+                                value="Center"
+                            />
+                            <div class="option-posYLm">
+                                <div onclick="showPyLm('Center')">Center</div>
+                                <div onclick="showPyLm('Top')">Top</div>
+                                <div onclick="showPyLm('Bottom')">Bottom</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt fzLm-input"
+                                type="numberic"
+                                value="0"
+                                onchange="fzTlm()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="em"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt tshadowM-input"
+                                type="numberic"
+                                value="0"
+                                onchange="fshTlM()"
+                            />
+                            <input
+                                class="inputOptMini"
+                                readonly
+                                type="text"
+                                value="px"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt fsLm-input"
+                                type="text"
+                                readonly
+                                value="Unable"
+                            />
+                            <div class="option-FsLm">
+                                <div onclick="showFsLm('Enable')">Enable</div>
+                                <div onclick="showFsLm('Unable')">Unable</div>
+                            </div>
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="tcolorLm-input"
+                                type="color"
+                                onchange="colorTLm()"
+                            />
+                        </div>
+                        <div class="con-input">
+                            <input
+                                class="inputOpt ffLm-input"
+                                type="text"
+                                readonly
+                                value="Default"
+                            />
+                            <div class="option-FfLm">
+                                <div onclick="showFfLm('Default')">Default</div>
+                                <div onclick="showFfLm('Tahoma')">Tahoma</div>
+                                <div onclick="showFfLm('Poppins')">Poppins</div>
+                            </div>
+                        </div>
+                        <div class="reminder-click">
+                            Click or fill the box to interact
+                        </div>
+                    </div>
+                </div>
+                <div class="isi-opsi3">
+                    <label>Coming soon !</label>
+                    <label class="comingSoon"
+                        >There will be a custom transition feature, dark or
+                        light mode display, direct song play feature, schedule
+                        notes, etc. Available around February.</label
+                    >
+                    <!--
+                    <div class="side-left">
+                    </div>
+                    <div class="side-right">
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <div id="opening">
+            <img class="img-ew" src="ew.jpeg" alt="" />
+            <img class="img-ewtext" src="ewtext.png" alt="" />
+            <label
+                style="
+                    position: absolute;
+                    bottom: 0;
+                    color: #4b4b4b;
+                    opacity: 0.8;
+                    text-align: center;
+                    font-family: &quot;Poppins&quot;, sans-serif;
+                "
+                >Created By Justine <br />
+                or ZeruProgram</label
+            >
+        </div>
+        <div class="conReal">
+            <div class="container">
+                <div id="live-display">
+                    <!-- Display text live -->
+                    <p id="textLive"></p>
+                    <div id="blk"></div>
+                </div>
+
+                <div class="control-song">
+                    <p class="back">
+                        <svg
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            width="1em"
+                            class="svg1"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M18.6 42.6 1.05 25.05q-.25-.25-.35-.5Q.6 24.3.6 24q0-.3.1-.55.1-.25.35-.5L18.6 5.4q.55-.55 1.4-.55.85 0 1.4.55.6.6.6 1.425 0 .825-.6 1.425L5.65 24 21.4 39.75q.6.6.575 1.425-.025.825-.575 1.375-.6.6-1.425.6-.825 0-1.375-.55Z"
+                            />
+                        </svg>
+                    </p>
+                    <p class="song-title">"choose the song first!"</p>
+                    <p class="next">
+                        <svg
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            width="1em"
+                            class="svg2"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M13.8 42.45q-.55-.6-.575-1.4-.025-.8.575-1.4L29.55 23.9 13.8 8.15q-.55-.55-.575-1.375-.025-.825.575-1.425.55-.6 1.375-.625Q16 4.7 16.6 5.3l17.55 17.55q.25.25.35.5.1.25.1.55 0 .3-.1.55-.1.25-.35.5L16.6 42.5q-.55.55-1.375.55t-1.425-.6Z"
+                            />
+                        </svg>
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: row; width: 100%">
+                    <div class="scroll-bar">
+                        <font
+                            style="
+                                font-family: &quot;Poppins&quot;, sans-serif;
+                                font-weight: 600;
+                                user-select: none;
+                            "
+                            >Priview</font
+                        >
+                        <div class="changeTimelinePriv"></div>
+                    </div>
+                    <div class="scroll-bar">
+                        <font
+                            style="
+                                font-family: &quot;Poppins&quot;, sans-serif;
+                                font-weight: 600;
+                                user-select: none;
+                            "
+                        >
+                            Live
+                        </font>
+                        <div class="changeTimelineLive"></div>
+                    </div>
+                </div>
+
+                <div
+                    style="
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        gap: 10px;
+                    "
+                >
+                    <div id="priview-display">
+                        <!-- Display text live -->
+
+                        <p id="textPriviewMini"></p>
+                    </div>
+                    <div id="live-displaymini">
+                        <!-- Display text live -->
+
+                        <div id="blkM"></div>
+
+                        <p id="textLiveMini"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div id="openControls">
+                <button id="clear" onclick="clearTextNow()">Clear</button>
+                <button id="black">Black</button>
+                <button id="logo">Logo</button>
+                <button id="blink">Blink</button>
+                <button id="blank">Blank</button>
+            </div>
+            <button id="btnOpen" onclick="openControls3Bar()">
+                <svg
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1.5em"
+                    width="1.5em"
+                    id="svgOpen"
+                >
+                    <path
+                        fill="currentColor"
+                        d="M11.3 40q-1.4 0-2.35-.95Q8 38.1 8 36.7q0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95ZM24 40q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35Q25.4 40 24 40Zm12.7 0q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95ZM11.3 27.3q-1.4 0-2.35-.95Q8 25.4 8 24q0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95Zm12.7 0q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95Zm12.7 0q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35.95-.95 2.35-.95 1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95ZM11.3 14.6q-1.4 0-2.35-.95Q8 12.7 8 11.3q0-1.4.95-2.35Q9.9 8 11.3 8q1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95Zm12.7 0q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35Q22.6 8 24 8q1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95Zm12.7 0q-1.4 0-2.35-.95-.95-.95-.95-2.35 0-1.4.95-2.35Q35.3 8 36.7 8q1.4 0 2.35.95.95.95.95 2.35 0 1.4-.95 2.35-.95.95-2.35.95Z"
+                    />
+                </svg>
+            </button>
+        </div>
+        <div id="alertSong">Silakan klik lyric nya lagi</div>
+        <div id="alertButton">Silakan klik 1x lagi</div>
+
+        <!--   <div
+            id="crop-popup"
+            style="
+        display: none; justify-content: center; align-items: center;
+        flex-direction: column; position: fixed;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 90%;
+                height: 80%;
+                background: #fff;
+            "
+        >
+            <canvas id="crop-canvas" style="width: 50%; height: 40%"></canvas>
+            <button onclick="cropAndSetMedia()">OK</button>
+            <button onclick="resetCrop()">Reset</button>
+            <button onclick="zoomIn()">Zoom In</button>
+            <button onclick="zoomOut()">Zoom Out</button>
+        </div>-->
+
+        <script type="text/javascript" charset="utf-8">
+            console.log("creating by justine/zeru ©2024 ");
+            function oP() {
+                let oriBackgroundL;
+                let oriTextL;
+
+                const liveD = document.getElementById("live-display");
+                const txtLv = document.getElementById("textLive");
+                const liveMiniD = document.getElementById("live-displaymini");
+                const liveMiniT = document.getElementById("textLiveMini");
+                const priviewMiniD = document.getElementById("priview-display");
+                const priviewMiniT = document.getElementById("textPriviewMini");
+                oriBackgroundL = getComputedStyle(liveD).background;
+                oriTextL = getComputedStyle(txtLv).color;
+
+                liveMiniD.style.background = oriBackgroundL;
+                liveMiniT.style.color = oriTextL;
+                priviewMiniD.style.background = oriBackgroundL;
+                priviewMiniT.style.color = oriTextL;
+
+                document.getElementById("textLive").style.display = "none";
+
+                const tLiveSting = document.getElementById("textLive");
+                const oriColorTL = window
+                    .getComputedStyle(tLiveSting)
+                    .getPropertyValue("color");
+
+                inputFzTl.value = oriFontSizeTl;
+                inputFzTlm.value = oriFontSizeTlm;
+                inputFshTl.value = "default";
+                inputFshTl.value = "default";
+                inputClrTl.value = oriColorTL;
+
+                const oC = document.getElementById("openControls");
+                oC.style.display = "none";
+
+                const prvTxt = document.querySelector(".-bar");
+                const btnOpen = document.getElementById("btnOpen");
+                setTimeout(function () {
+                    const oP = document.getElementById("opening");
+                    oP.style.display = "none";
+                    helpPopup.style.bottom = 0;
+                }, 500);
+
+                const inputLs = document.querySelector(".ls-input");
+                if (inputLs.value === "On") {
+                    inputLs.style.color = "lime";
+                } else if (inputLs.value === "Off") {
+                    inputLs.style.color = "red";
+                }
+            }
+
+            //sistem navigasi
+            const barOn = document.querySelector(".bar");
+            const barOf = document.getElementById("closeNav");
+            const navIsi = document.querySelector(".nav-links");
+            const navIsiA = document.querySelector(".a-linkNav");
+            const opBtn = document.querySelector(".controls");
+            const btnOpStg = document.getElementById("openSetting");
+            const btnClStg = document.getElementById("closeSetting");
+            const btnStg = document.querySelector(".containerSetting");
+
+            barOn.addEventListener("click", () => {
+                navIsi.classList.add("active");
+                opBtn.style.display = "none";
+            });
+            barOf.addEventListener("click", () => {
+                barOf.style.transition = ".6s";
+                opBtn.style.display = "block";
+                navIsi.classList.remove("active");
+            });
+            function nav() {
+                opBtn.style.display = "none";
+                navIsi.classList.add("active");
+                barOf.style.display = "flex";
+                barOf.style.background = "#2a2a2a";
+            }
+
+            btnOpStg.addEventListener("click", () => {
+                btnStg.style.left = "0";
+            });
+            btnClStg.addEventListener("click", () => {
+                btnStg.style.left = "200%";
+            });
+            const container = document.querySelector(".container");
+            container.addEventListener("click", () => {
+                navIsi.classList.remove("active");
+                opBtn.style.display = "block";
+            });
+            let isAppend = false;
+
+            function handleMediaChange() {
+                var mediaInput = document.getElementById("mediaInput");
+                var liveDis = document.getElementById("live-display");
+                var liveDisMin = document.getElementById("live-displaymini");
+
+                var file = mediaInput.files[0];
+
+                if (file) {
+                    var fileType = file.type.split("/")[0]; // 'image' or 'video'
+
+                    if (fileType === "image") {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            liveDis.style.backgroundImage =
+                                "url('" + e.target.result + "')";
+                            liveDis.style.backgroundSize = "100% 100%";
+                            liveDis.style.backgroundRepeat = "no-repeat";
+                            liveDis.style.backgroundPosition = "center";
+                            liveDis.style.objectFit = "contain";
+                            var previousVideo = liveDis.querySelector("video");
+                            liveDis.removeChild(previousVideo);
+                        };
+                        reader.readAsDataURL(file);
+                    } else if (fileType === "video") {
+                        // If it's a video, create a video element and append it to the container
+                        var videoElement = document.createElement("video");
+                        videoElement.src = URL.createObjectURL(file);
+                        videoElement.autoplay = true;
+                        videoElement.loop = true;
+                        videoElement.muted = true;
+                        videoElement.style.width = "100%";
+                        videoElement.style.height = "100%";
+                        videoElement.style.objectFit = "cover";
+
+                        // Remove any previous video element
+                        var previousVideo = liveDis.querySelector("video");
+                        if (previousVideo) {
+                            liveDis.removeChild(previousVideo);
+                        }
+                        if (!isAppend) {
+                            liveDis.appendChild(videoElement);
+                        }
+
+                        isAppend = true;
+                    }
+                }
+            }
+            var tL = document.getElementById("textLive");
+            var tLM = document.getElementById("textLiveMini");
+            var btnC = document.getElementById("clear");
+            var btnB = document.getElementById("black");
+            var btnL = document.getElementById("logo");
+            var tLP = document.getElementById("textPriviewMini");
+            var priviewMiniD = document.getElementById("priview-display");
+            var selectedSong = null;
+            var cleared = false; // Variabel untuak menandai apakah tombol clear sudah diklik
+            var selectedSongP = null;
+            var clearedP = false; // Variabel untuk menandai apakah tombol clear sudah diklik
+
+            function changeTextPriview(clickedElement) {
+                // Menghapus kelas "selected" dari elemen yang sebelumnya terpilih (jika ada)
+                if (selectedSongP !== null) {
+                    selectedSongP.classList.remove("selected");
+                    selectedSongP.style.background = "transparent";
+                }
+                clickedElement.classList.add("selected");
+                clickedElement.style.background = "#979797";
+
+                tLP.style.opacity = 0;
+
+                setTimeout(function () {
+                    tLP.innerHTML = clickedElement.innerHTML;
+                    tLP.style.opacity = 1;
+                }, 150);
+                selectedSongP = clickedElement;
+                clearedP = false; // Setelah mengganti teks, reset variabel cleared
+            }
+            function changeText(clickedElement) {
+                btnC.style.background = "#5c5470";
+                btnL.style.background = "#5c5470";
+                // Menghapus kelas "selected" dari elemen yang sebelumnya terpilih (jika ada)
+                if (selectedSong !== null) {
+                    selectedSong.classList.remove("selected");
+                }
+
+                // Menambah kelas "selected" pada elemen yang baru terpilih
+                clickedElement.classList.add("selected");
+
+                // Mengatur opacity menjadi 0 dengan durasi 0.5 detik
+                tL.style.opacity = 0;
+                tLM.style.opacity = 0;
+
+                // Mengganti teks pada div dengan id "textLive" setelah opacity menjadi 0
+                tL.style.transition = "opacity .280s ease-in-out";
+                tLM.style.transition = "opacity .280s ease-in-out";
+                setTimeout(function () {
+                    tL.innerHTML = clickedElement.innerHTML;
+                    tLM.innerHTML = clickedElement.innerHTML;
+
+                    // Mengatur opacity menjadi 1 kembali
+                    tL.style.opacity = 1;
+                    tLM.style.opacity = 1;
+                }, 300);
+
+                // Menyimpan referensi ke elemen yang baru terpilih
+                selectedSong = clickedElement;
+                cleared = false; // Setelah mengganti teks, reset variabel cleared
+            }
+
+            //sistem click on opsi setting
+            const opsi1 = document.getElementById("opsi1");
+            const opsi2 = document.getElementById("opsi2");
+            const opsi3 = document.getElementById("opsi3");
+            const isi1 = document.querySelector(".isi-opsi1");
+            const isi2 = document.querySelector(".isi-opsi2");
+            const isi3 = document.querySelector(".isi-opsi3");
+
+            opsi1.addEventListener("click", () => {
+                opsi1.style.borderBottom = "3px solid transparent";
+                opsi1.style.borderTopLeftRadius = "20px";
+                opsi1.style.borderTopRightRadius = "20px";
+                opsi1.style.background = "rgba(128,128,128,.2)";
+                opsi2.style.borderBottom = "3px solid #5c5470";
+                opsi3.style.borderBottom = "3px solid #5c5470";
+                opsi2.style.background = "transparent";
+                opsi3.style.background = "transparent";
+                opsi2.style.borderTopLeftRadius = "5px";
+                opsi2.style.borderTopRightRadius = "5px";
+                opsi3.style.borderTopLeftRadius = "5px";
+                opsi3.style.borderTopRightRadius = "5px";
+
+                isi2.style.transform = "translateX(200%)";
+                isi1.style.transform = "translateX(0)";
+                isi3.style.transform = "translateX(200%)";
+            });
+            opsi2.addEventListener("click", () => {
+                opsi2.style.borderBottom = "3px solid transparent";
+                opsi2.style.borderTopLeftRadius = "20px";
+                opsi2.style.borderTopRightRadius = "20px";
+                opsi2.style.background = "rgba(128,128,128,.2)";
+                opsi1.style.borderBottom = "3px solid #5c5470";
+                opsi3.style.borderBottom = "3px solid #5c5470";
+                opsi1.style.background = "transparent";
+                opsi3.style.background = "transparent";
+                opsi1.style.borderTopLeftRadius = "5px";
+                opsi1.style.borderTopRightRadius = "5px";
+                opsi3.style.borderTopLeftRadius = "5px";
+                opsi3.style.borderTopRightRadius = "5px";
+
+                isi2.style.transform = "translateX(0)";
+                isi1.style.transform = "translateX(-400%)";
+                isi3.style.transform = "translateX(200%)";
+            });
+            opsi3.addEventListener("click", () => {
+                opsi3.style.borderBottom = "3px solid transparent";
+                opsi3.style.borderTopLeftRadius = "20px";
+                opsi3.style.borderTopRightRadius = "20px";
+                opsi3.style.background = "rgba(128,128,128,.2)";
+                opsi1.style.borderBottom = "3px solid #5c5470";
+                opsi2.style.borderBottom = "3px solid #5c5470";
+                opsi1.style.background = "transparent";
+                opsi2.style.background = "transparent";
+                opsi2.style.borderTopLeftRadius = "5px";
+                opsi2.style.borderTopRightRadius = "5px";
+                opsi1.style.borderTopLeftRadius = "5px";
+                opsi1.style.borderTopRightRadius = "5px";
+
+                isi2.style.transform = "translateX(-400%)";
+                isi3.style.transform = "translateX(0)";
+                isi1.style.transform = "translateX(-400%)";
+            });
+
+            // sistem buka dropdown
+            const inputLs = document.querySelector(".ls-input");
+            const inputPtx = document.querySelector(".opx-input");
+            const inputPty = document.querySelector(".opy-input");
+            const inputFf = document.querySelector(".ff-input");
+            const inputFa = document.querySelector(".fa-input");
+            const inputClrTl = document.querySelector(".tcolor-input");
+            const inputPtxLm = document.querySelector(".opxLm-input");
+            const inputPtyLm = document.querySelector(".opyLm-input");
+            const inputClrTlm = document.querySelector(".tcolorLm-input");
+            const inputFfLm = document.querySelector(".ffLm-input");
+            const optionLv = document.querySelector(".option-lv");
+            const optionPx = document.querySelector(".option-posX");
+            const optionPy = document.querySelector(".option-posY");
+            const optionFf = document.querySelector(".option-Ff");
+            const optionFa = document.querySelector(".option-Fa");
+            const optionFs = document.querySelector(".option-Fs");
+            const optionFsh = document.querySelector(".option-Fs");
+            const optionPxLm = document.querySelector(".option-posXLm");
+            const optionPyLm = document.querySelector(".option-posYLm");
+            const optionFsLm = document.querySelector(".option-FsLm");
+            const optionFfLm = document.querySelector(".option-FfLm");
+            // sistem input style harus angka
+            const inputMartopTl = document.querySelector(".martop-input");
+            const inputMarbottomTl = document.querySelector(".marbottom-input");
+            const inputMarleftTl = document.querySelector(".marleft-input");
+            const inputMarrightTl = document.querySelector(".marright-input");
+            const inputFzTl = document.querySelector(".fz-input");
+            const inputFshTl = document.querySelector(".tshadow-input");
+            const inputFsTl = document.querySelector(".fs-input");
+            const inputFzTlm = document.querySelector(".fzLm-input");
+            const inputFshTlm = document.querySelector(".tshadowM-input");
+            const inputFsTlm = document.querySelector(".fsLm-input");
+            const textLiveSet = document.getElementById("textLive");
+            const textLiveMSet = document.getElementById("textLiveMini");
+            const oriMarginTl = window
+                .getComputedStyle(textLiveSet)
+                .getPropertyValue("margin");
+
+            var konvertOriFzTl = parseFloat(
+                window
+                    .getComputedStyle(textLiveSet)
+                    .getPropertyValue("font-size")
+            );
+            var oriFontSizeTl =
+                konvertOriFzTl /
+                parseFloat(
+                    window
+                        .getComputedStyle(document.body)
+                        .getPropertyValue("font-size")
+                );
+
+            var konvertOriFzTlm = parseFloat(
+                window
+                    .getComputedStyle(textLiveMSet)
+                    .getPropertyValue("font-size")
+            );
+            var oriFontSizeTlm =
+                konvertOriFzTlm /
+                parseFloat(
+                    window
+                        .getComputedStyle(document.body)
+                        .getPropertyValue("font-size")
+                );
+            var clickedDrop = false;
+
+            document
+                .querySelector(".side-left")
+                .addEventListener("click", () => {
+                    optionLv.style.display = "none";
+                    optionPx.style.display = "none";
+                    optionPy.style.display = "none";
+                    optionFf.style.display = "none";
+                    optionFa.style.display = "none";
+                    optionFs.style.display = "none";
+                });
+            inputLs.onclick = function () {
+                if (!clickedDrop) {
+                    optionLv.style.display = "block";
+                } else {
+                    optionLv.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            inputPtx.onclick = function () {
+                if (!clickedDrop) {
+                    optionPx.style.display = "block";
+                } else {
+                    optionPx.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            inputPty.onclick = function () {
+                if (!clickedDrop) {
+                    optionPy.style.display = "block";
+                } else {
+                    optionPy.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            inputFf.onclick = function () {
+                if (!clickedDrop) {
+                    optionFf.style.display = "block";
+                } else {
+                    optionFf.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            inputFa.onclick = function () {
+                if (!clickedDrop) {
+                    optionFa.style.display = "flex";
+                } else {
+                    optionFa.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            function colorTL() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.color = inputClrTl.value;
+            }
+            function boldTl() {
+                const tLive = document.getElementById("textLive");
+                const bT = document.getElementById("boldText");
+                if (!clickedDrop) {
+                    tLive.style.fontWeight = "400";
+                    bT.style.color = "white";
+                } else {
+                    tLive.style.fontWeight = "bolder";
+                    bT.style.color = "lime";
+                }
+                clickedDrop = !clickedDrop;
+            }
+            function italicTl() {
+                const tLive = document.getElementById("textLive");
+                const bI = document.getElementById("italicText");
+                if (!clickedDrop) {
+                    tLive.style.fontStyle = "italic";
+                    bI.style.color = "lime";
+                } else {
+                    tLive.style.fontStyle = "normal";
+                    bI.style.color = "white";
+                }
+                clickedDrop = !clickedDrop;
+            }
+            function underlineTl() {
+                const tLive = document.getElementById("textLive");
+                const bU = document.getElementById("underlineText");
+                if (!clickedDrop) {
+                    tLive.style.textDecoration = "underline";
+                    tLive.style.textDecorationColor = "white";
+                    bU.style.color = "lime";
+                } else {
+                    bU.style.color = "white";
+                    tLive.style.textDecoration = "none";
+                }
+                clickedDrop = !clickedDrop;
+            }
+            function marTtl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.marginTop = inputMartopTl.value + "px";
+                if (inputMartopTl.value === "") {
+                    inputMartopTl.value = 0;
+                }
+            }
+            function marBtl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.marginBottom = inputMarbottomTl.value + "px";
+                if (inputMarbottomTl.value === "") {
+                    inputMarbottomTl.value = 0;
+                }
+            }
+            function marLtl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.marginLeft = inputMarleftTl.value + "px";
+                if (inputMarleftTl.value === "") {
+                    inputMarleftTl.value = 0;
+                }
+            }
+            function marRtl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.marginRight = inputMarrightTl.value + "px";
+                if (inputMarrightTl.value === "") {
+                    inputMarrightTl.value = 0;
+                }
+            }
+            function fzTl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.fontSize = inputFzTl.value + "em";
+                if (inputFzTl.value === "") {
+                    inputFzTl.value = oriFontSizeTl;
+                    const tst = document.getElementById("testing");
+                    tst.value = oriFontSizeTl;
+                }
+            }
+            inputFzTl.addEventListener("input", function () {
+                var filteredValue = this.value.replace(/\D/g, "");
+
+                if (filteredValue !== this.value) {
+                    this.value = filteredValue;
+                }
+            });
+            function fshTl() {
+                const tLive = document.getElementById("textLive");
+                tLive.style.textShadow = "0 0 " + inputFshTl.value + "px black";
+
+                if (inputFshTl.value === "") {
+                    inputFshTl.value = "default";
+                }
+            }
+            inputFshTl.addEventListener("input", function () {
+                var filteredValue = this.value.replace(/\D/g, "");
+
+                if (filteredValue !== this.value) {
+                    this.value = filteredValue;
+                }
+            });
+            inputFsTl.onclick = function () {
+                if (!clickedDrop) {
+                    optionFs.style.display = "block";
+                } else {
+                    optionFs.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+
+            // textLive mini
+
+            inputPtxLm.onclick = function () {
+                if (!clickedDrop) {
+                    optionPxLm.style.display = "block";
+                } else {
+                    optionPxLm.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            inputPtyLm.onclick = function () {
+                if (!clickedDrop) {
+                    optionPyLm.style.display = "block";
+                } else {
+                    optionPyLm.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            function fzTlm() {
+                const tLiveM = document.getElementById("textLiveMini");
+                tLiveM.style.fontSize = inputFzTlm.value + "em";
+                if (inputFzTlm.value === "") {
+                    inputFzTlm.value = oriFontSizeTlm;
+                }
+            }
+            inputFzTlm.addEventListener("input", function () {
+                var filteredValue = this.value.replace(/\D/g, "");
+
+                if (filteredValue !== this.value) {
+                    this.value = filteredValue;
+                }
+            });
+            function fshTlM() {
+                const tLiveM = document.getElementById("textLiveMini");
+                tLiveM.style.textShadow =
+                    "0 0 " + inputFshTlm.value + "px black";
+
+                if (inputFshTlm.value === "") {
+                    inputFshTlm.value = "default";
+                }
+            }
+            inputFshTlm.addEventListener("input", function () {
+                var filteredValue = this.value.replace(/\D/g, "");
+
+                if (filteredValue !== this.value) {
+                    this.value = filteredValue;
+                }
+            });
+            inputFsTlm.onclick = function () {
+                if (!clickedDrop) {
+                    optionFsLm.style.display = "block";
+                } else {
+                    optionFsLm.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+            function colorTLm() {
+                const tLiveM = document.getElementById("textLiveMini");
+                tLiveM.style.color = inputClrTlm.value;
+            }
+            inputFfLm.onclick = function () {
+                if (!clickedDrop) {
+                    optionFfLm.style.display = "block";
+                } else {
+                    optionFfLm.style.display = "none";
+                }
+                clickedDrop = !clickedDrop;
+            };
+
+            function showLs(a) {
+                inputLs.value = a;
+                optionLv.style.display = "none";
+                if (inputLs.value === "On") {
+                    inputLs.style.color = "lime";
+                    gLiveBtn.style.background = "blue";
+                    gLiveBtn.style.animation =
+                        "warna .5s steps(2) infinite alternate";
+                    gLiveBtn.innerHTML = live;
+                    gLiveBtn.style.padding = "10px 18px";
+                    setTimeout(function () {
+                        tL.style.display = "flex";
+                        tLM.style.display = "flex";
+                    }, 500);
+                } else if (inputLs.value === "Off") {
+                    inputLs.style.color = "red";
+                    tL.style.display = "none";
+                    tLM.style.display = "none";
+                    gLiveBtn.style.background = "red";
+                    gLiveBtn.style.animation = "none";
+                    gLiveBtn.innerHTML = Golive;
+                    gLiveBtn.style.padding = "10px";
+                } else if (inputLs.value === "Center") {
+                    inputLs.style.color = "lime";
+                }
+            }
+            function showPx(a) {
+                inputPtx.value = a;
+                optionPx.style.display = "none";
+
+                const tLive = document.getElementById("textLive");
+                if (inputPtx.value === "Left") {
+                    tLive.classList.remove("activePosR");
+                    tLive.classList.add("activePosL");
+                } else if (inputPtx.value === "Right") {
+                    tLive.classList.remove("activePosL");
+                    tLive.classList.add("activePosR");
+                } else if (inputPtx.value === "Center") {
+                    tLive.classList.remove("activePosR");
+                    tLive.classList.remove("activePosL");
+                }
+            }
+            function showPy(a) {
+                inputPty.value = a;
+                optionPy.style.display = "none";
+
+                const tLive = document.getElementById("textLive");
+                if (inputPty.value === "Top") {
+                    tLive.classList.remove("activePosB");
+                    tLive.classList.add("activePosT");
+                } else if (inputPty.value === "Bottom") {
+                    tLive.classList.remove("activePosT");
+                    tLive.classList.add("activePosB");
+                } else if (inputPty.value === "Center") {
+                    tLive.classList.remove("activePosT");
+                    tLive.classList.remove("activePosB");
+                }
+            }
+            function showFf(a) {
+                inputFf.value = a;
+                optionFf.style.display = "none";
+
+                const tLive = document.getElementById("textLive");
+                if (inputFf.value === "Default") {
+                    tLive.style.fontFamily = "Tahoma, sans-serif";
+                } else if (inputFf.value === "Tahoma") {
+                    tLive.style.fontFamily = "Tahoma, sans-serif";
+                } else if (inputFf.value === "Poppins") {
+                    tLive.style.fontFamily = "Poppins, sans-serif";
+                }
+            }
+            function showFs(a) {
+                inputFsTl.value = a;
+                optionFs.style.display = "none";
+
+                const tLive = document.getElementById("textLive");
+                if (inputFsTl.value === "Unable") {
+                    tLive.style.webkitTextStroke = "0";
+                } else if (inputFsTl.value === "Enable") {
+                    tLive.style.webkitTextStroke = "1px black";
+                }
+            }
+
+            // textLive mini
+            function showPxLm(a) {
+                inputPtxLm.value = a;
+                optionPxLm.style.display = "none";
+
+                const tLiveM = document.getElementById("textLiveMini");
+                if (inputPtxLm.value === "Left") {
+                    tLiveM.classList.remove("activePosR");
+                    tLiveM.classList.add("activePosL");
+                } else if (inputPtxLm.value === "Right") {
+                    tLiveM.classList.remove("activePosL");
+                    tLiveM.classList.add("activePosR");
+                } else if (inputPtxLm.value === "Center") {
+                    tLiveM.classList.remove("activePosR");
+                    tLiveM.classList.remove("activePosL");
+                }
+            }
+            function showPyLm(a) {
+                inputPtyLm.value = a;
+                optionPyLm.style.display = "none";
+
+                const tLiveM = document.getElementById("textLiveMini");
+                if (inputPtyLm.value === "Top") {
+                    tLiveM.classList.remove("activePosB");
+                    tLiveM.classList.add("activePosT");
+                } else if (inputPtyLm.value === "Bottom") {
+                    tLiveM.classList.remove("activePosT");
+                    tLiveM.classList.add("activePosB");
+                } else if (inputPtyLm.value === "Center") {
+                    tLiveM.classList.remove("activePosT");
+                    tLiveM.classList.remove("activePosB");
+                }
+            }
+            function showFsLm(a) {
+                inputFsTlm.value = a;
+                optionFsLm.style.display = "none";
+
+                const tLiveM = document.getElementById("textLiveMini");
+                if (inputFsTlm.value === "Unable") {
+                    tLiveM.style.webkitTextStroke = "0";
+                } else if (inputFsTlm.value === "Enable") {
+                    tLiveM.style.webkitTextStroke = ".5px black";
+                }
+            }
+            function showFfLm(a) {
+                inputFfLm.value = a;
+                optionFfLm.style.display = "none";
+
+                const tLiveM = document.getElementById("textLiveMini");
+                if (inputFfLm.value === "Default") {
+                    tLiveM.style.fontFamily = "Tahoma, sans-serif";
+                } else if (inputFfLm.value === "Tahoma") {
+                    tLiveM.style.fontFamily = "Tahoma, sans-serif";
+                } else if (inputFfLm.value === "Poppins") {
+                    tLiveM.style.fontFamily = "Poppins, sans-serif";
+                }
+            }
+
+            // sistem pop up helping
+            
+            const helpPopup = document.querySelector(".helping-popup");
+            helpPopup.onclick = function () {
+                helpPopup.style.bottom = "-200%";
+            };
+            function helping() {
+                helpPopup.style.bottom = "0";
+            }
+            function toHelp() {
+              helpPopup.innerHTML = "Loading.. <br> <div class='bodyLoadHelp'><div class='loadHelp'></div></div>";
+              setTimeout(function () {
+                helpPopup.style.bottom = "0";
+              },100);
+              setTimeout(function () {
+                window.location.href = "/help";
+              },3500);
+            }
+
+            let openC3 = false;
+            const oC = document.getElementById("openControls");
+            const sO = document.getElementById("svgOpen");
+
+            var alBut = false;
+            function openControls3Bar() {
+                if (!alBut) {
+                    const bA = document.getElementById("alertButton");
+                    bA.style.display = "flex";
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "0";
+                    }, 10);
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "-200%";
+                    }, 2000);
+                    alBut = true;
+                }
+                if (openC3) {
+                    oC.style.animation = "tbottomI .4s ease";
+                    oC.style.display = "block";
+                } else {
+                    oC.style.animation = "tbottomO .4s ease";
+                    setTimeout(function () {
+                        oC.style.display = "none";
+                    }, 300);
+                }
+                openC3 = !openC3;
+            }
+            const clearTeks = document.getElementById("clear");
+            const sA = document.getElementById("alertSong");
+            var clrBtn = false;
+            function clearTextNow() {
+                if (cleared) {
+                    btnC.style.background = "#5c5470";
+
+                    tL.style.transition = "opacity 1s ease-in-out";
+                    tL.style.opacity = 1;
+                    tLM.style.transition = "opacity 1s ease-in-out";
+                    tLM.style.opacity = 1;
+                    /*   setTimeout( function () {
+              tL.style.transition = "opacity .25s ease-in-out";
+                
+              }, 200); */
+                } else {
+                    clearTeks.style.background = "black";
+                    tL.style.opacity = 0;
+                    tL.style.transition = "opacity 1s ease-in-out";
+                    tLM.style.opacity = 0;
+                    tLM.style.transition = "opacity 1s ease-in-out";
+                }
+                cleared = !cleared;
+            }
+            let blankSong = false;
+            let originalBackground;
+            let originalText;
+            var alButB = false;
+
+            const liveDisplay = document.getElementById("live-display");
+            const txtLive = document.getElementById("textLive");
+            const liveDisplayMini = document.getElementById("live-displaymini");
+            const txtLiveMini = document.getElementById("textLiveMini");
+            const blank = document.getElementById("blank");
+            const txtP = document.getElementById("textPriviewMini");
+            const priviewD = document.getElementById("priview-display");
+
+            const imgTemps = document.querySelectorAll(".imgTemp");
+            /*        const imgT2 = document.querySelector(".imgTemp2");
+            const imgT3 = document.querySelector(".imgTemp3");
+            const imgT4 = document.querySelector(".imgTemp4");*/
+            /*  
+            const imgT5 = document.querySelector(".imgTemp5");
+            const imgT6 = document.querySelector(".imgTemp6");*/
+            const bgColorC = document.querySelector(".colorTemp");
+
+            function bgWhite() {
+                liveDisplay.style.background = "white";
+                liveDisplayMini.style.background = "white";
+            }
+            function bgBlack() {
+                liveDisplay.style.background = "black";
+                liveDisplayMini.style.background = "black";
+            }
+            bgColorC.addEventListener("change", () => {
+                liveDisplay.style.background = bgColorC.value;
+                liveDisplayMini.style.background = bgColorC.value;
+            });
+            imgTemps.forEach(imgTemp => {
+                imgTemp.addEventListener("click", function () {
+                    var imageUrl = this.src;
+                    liveDisplay.style.background = "url(" + imageUrl + ")";
+                    liveDisplay.style.backgroundSize = "100% 100%";
+                    liveDisplay.style.backgroundPosition = "center";
+                    liveDisplay.style.backgroundRepeat = "no-repeat";
+                    liveDisplay.style.objectFit = "contain";
+                    liveDisplayMini.style.background = "url(" + imageUrl + ")";
+                    liveDisplayMini.style.backgroundSize = "100% 100%";
+                    liveDisplayMini.style.backgroundPosition = "center";
+                    liveDisplayMini.style.backgroundRepeat = "no-repeat";
+                    liveDisplayMini.style.objectFit = "contain";
+
+                    var previousVideo = liveDisplay.querySelector("video");
+                    liveDisplay.removeChild(previousVideo);
+                });
+            });
+            originalBackground = getComputedStyle(liveDisplay).background;
+            originalText = getComputedStyle(txtLive).color;
+
+            blank.addEventListener("click", () => {
+                if (!alButB) {
+                    const bA = document.getElementById("alertButton");
+                    bA.style.display = "flex";
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "0";
+                    }, 10);
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "-200%";
+                    }, 2000);
+                    alButB = true;
+                }
+                if (blankSong) {
+                    // Ganti ke warna hitam
+                    txtLive.style.opacity = "0";
+                    txtLive.style.display = "none";
+                    txtLiveMini.style.opacity = "0";
+                    txtLiveMini.style.display = "none";
+                    blank.style.background = "black";
+                    liveDisplay.style.background = "black";
+                    liveDisplayMini.style.background = "black";
+                } else {
+                    // Kembalikan ke warna asli
+                    txtLive.style.display = "flex";
+                    txtLive.style.opacity = "1";
+                    txtLiveMini.style.display = "flex";
+                    txtLiveMini.style.opacity = "1";
+                    blank.style.background = "#5c5470";
+                    liveDisplay.style.background = originalBackground;
+                    liveDisplayMini.style.background = originalBackground;
+                    txtLive.style.color = originalText;
+                    txtLiveMini.style.color = originalText;
+                }
+                blankSong = !blankSong;
+            });
+            const logoTeks = document.getElementById("logo");
+            logoTeks.addEventListener("click", () => {
+                if (cleared) {
+                    btnL.style.background = "#5c5470";
+
+                    tL.style.transition = "opacity .5s ease-in-out";
+                    tL.style.opacity = 1;
+                    tLM.style.transition = "opacity .5s ease-in-out";
+                    tLM.style.opacity = 1;
+                    /*   setTimeout( function () {
+              tL.style.transition = "opacity .25s ease-in-out";
+                
+              }, 200); */
+                } else {
+                    logoTeks.style.background = "black";
+
+                    tL.style.opacity = 0;
+                    tL.style.transition = "opacity .5s ease-in-out";
+                    tLM.style.opacity = 0;
+                    tLM.style.transition = "opacity .5s ease-in-out";
+                }
+                cleared = !cleared;
+            });
+            var bblack = false;
+            const black = document.getElementById("black");
+            black.addEventListener("click", () => {
+                if (bblack) {
+                    // Kembalikan ke warna asli
+                    tLM.style.transition = "opacity .5s ease-in-out";
+                    tL.style.transition = "opacity .5s ease-in-out";
+                    setTimeout(function () {
+                        txtLive.style.opacity = "1";
+                        txtLiveMini.style.opacity = "1";
+                    }, 100);
+                    txtLive.style.display = "flex";
+                    txtLiveMini.style.display = "flex";
+                    black.style.background = "#5c5470";
+                    txtLive.style.color = originalText;
+                    txtLiveMini.style.color = originalText;
+
+                    /*   setTimeout( function () {
+              tL.style.transition = "opacity .25s ease-in-out";
+                
+              }, 200); */
+                } else {
+                    tL.style.transition = "opacity .3s ease-in-out";
+                    tLM.style.transition = "opacity .3s ease-in-out";
+                    black.style.background = "black";
+
+                    txtLive.style.opacity = "0";
+                    txtLiveMini.style.opacity = "0";
+
+                    setTimeout(function () {
+                        txtLive.style.display = "none";
+                        txtLiveMini.style.display = "none";
+                    }, 200);
+                }
+                bblack = !bblack;
+            });
+            let blink = false;
+            var alBut2 = false;
+            const blinkBg = document.getElementById("blink");
+            blinkBg.addEventListener("click", () => {
+                if (!alBut2) {
+                    const bA = document.getElementById("alertButton");
+                    bA.style.display = "flex";
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "0";
+                    }, 10);
+                    setTimeout(function () {
+                        bA.style.position = "fixed";
+                        bA.style.right = "-200%";
+                    }, 2000);
+                    alBut2 = true;
+                }
+                const blk = document.getElementById("blk");
+                const blkM = document.getElementById("blkM");
+                if (blink) {
+                    blk.style.display = "flex";
+                    blkM.style.display = "flex";
+                    blinkBg.style.background = "white";
+                    blinkBg.style.color = "black";
+                } else {
+                    blinkBg.style.background = "#5c5470";
+                    blinkBg.style.color = "white";
+                    blk.style.display = "none";
+                    blkM.style.display = "none";
+                }
+                blink = !blink;
+            });
+
+            var tL = document.getElementById("textLive");
+            var glive = false;
+            var live = "Live";
+            var Golive = "Go live";
+            var gLiveBtn = document.getElementById("goLive");
+
+            function goLiveAct() {
+                if (glive) {
+                    tL.style.display = "none";
+                    tLM.style.display = "none";
+                    gLiveBtn.style.background = "red";
+                    gLiveBtn.style.animation = "none";
+                    gLiveBtn.innerHTML = Golive;
+                    gLiveBtn.style.padding = "10px";
+                    inputLs.value = "Off";
+                } else {
+                    gLiveBtn.style.background = "blue";
+                    gLiveBtn.style.animation =
+                        "warna .5s steps(2) infinite alternate";
+                    gLiveBtn.innerHTML = live;
+                    gLiveBtn.style.padding = "10px 18px";
+                    inputLs.value = "On";
+                    setTimeout(function () {
+                        tL.style.display = "flex";
+                        tLM.style.display = "flex";
+                    }, 500);
+                }
+                glive = !glive;
+
+                if (inputLs.value === "On") {
+                    inputLs.style.color = "lime";
+                } else if (inputLs.value === "Off") {
+                    inputLs.style.color = "red";
+                }
+            }
+            document.addEventListener("keydown", function (event) {
+                if (event.keyCode === "13" || event.key === "Enter") {
+                    document.getElementById("textLive").style.display = "flex";
+                    const songInput =
+                        document.getElementById("songInput").value;
+                    document.getElementById("textLive").innerHTML =
+                        songInput + "<br>";
+                }
+            });
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "a" || event.key === "A") {
+                    let openC3 = false;
+                    const oC = document.getElementById("openControls");
+                    const sO = document.getElementById("svgOpen");
+                    if (openC3) {
+                        oC.style.animation = "tbottomI .4s ease";
+                        oC.style.display = "block";
+                    } else {
+                        oC.style.animation = "tbottomO .4s ease";
+                        setTimeout(function () {
+                            oC.style.display = "none";
+                        }, 300);
+                    }
+                    openC3 = !openC3;
+                }
+            });
+        </script>
+    </body>
+</html>
