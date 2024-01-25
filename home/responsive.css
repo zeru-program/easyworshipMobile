@@ -1,0 +1,564 @@
+      @media screen and (max-width: 368px) {
+        #live-display {
+          width: 90%;
+          height: 150px;
+          padding: 0;
+          margin-top: 6%;
+        }
+        
+        #priview-display {
+          height: 75px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        #live-displaymini {
+          height: 75px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        .navbar {
+          height: 2.2rem;
+        }
+        
+        .nav-links {
+          display: flex;
+          background: #2a2a2a;
+          width: 60%;
+          height: 100%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          left: -200%;
+          gap: 10px;
+          flex-direction: column;
+          transition: all 0.2s ease;
+        }
+        
+        .active {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        .control-song {
+          width: 108%;
+        }
+        
+        #goLive {
+          font-size: 0.7em;
+          padding: 5px;
+        }
+        
+        #btnOpen {
+          padding: 6px 13px;
+        }
+        
+        #help {
+          padding: 10px 15px;
+        }
+        
+        .scroll-bar {
+          width: 100%;
+          height: 37vh;
+          font-size: 0.6em;
+          margin-top: 2%;
+        }
+        
+        .back {
+          padding: 3px;
+        }
+        
+        .next {
+          padding: 3px;
+        }
+        
+        .song-title {
+          font-size: 0.7em;
+        }
+        
+        #alertSong,
+        #alertButton {
+          font-size: .7em;
+          padding: 9px;
+        }
+        
+        select {
+          font-size: .7em;
+          padding: 5px;
+        }
+        
+        .labelTemp {
+          font-size: .8em;
+        }
+        
+        #bgTemplate {
+          width: 50px;
+          height: 30px;
+        }
+        
+        #mediaInputLabel {
+          font-size: .6em;
+          padding: 5px;
+        }
+        
+        .iconMusic {
+          font-size: 1em;
+        }
+        
+        #nameSongDown {
+          font-size: .6em;
+        }
+        
+        .reqSong {
+          font-size: .6em;
+        }
+        
+        #closeNav {
+          width: 1px;
+          height: 1px;
+          font-size: 1em;
+        }
+        
+        #openSetting {
+          font-size: 1em;
+        }
+        .option-lv, .option-posX, .option-posY, .option-Ff, .option-Fa, .option-Fs, .option-posXLm, .option-posYLm, .option-FsLm, .option-FfLm, .option-alert {
+          width: 100px;
+        }
+        
+        .inputOpt, .tcolor-input ,.tcolorLm-input{
+          width: 110px;
+          padding: 0;
+          font-size: .7em;
+        }
+        .marleft-input, .martop-input, .marbottom-input, .marright-input, .fz-input, .fzLm-input, .tstroke-input, .tstrokeLm-input, .tshadow-input, .tshadowM-input {
+          width: 70px;
+        }
+        #opsi1, #opsi2, #opsi3 {
+          font-size: .6em;
+          padding: 5px;
+          margin-top: 4%;
+        }
+        
+        .isi-opsi1 {
+          height: 90vh;
+          font-size: .8em;
+          overflow-y: auto;
+        }
+        
+        .isi-opsi2 {
+          height: 90vh;
+        }
+        .isi-opsi3 {
+          height: 90vh;
+        }
+        
+        
+        
+        .colorTemp {
+          height: 40px;
+          border-radius: 10px;
+        }
+        .contact {
+          font-size: .8em;
+        }
+        .marTopBS {
+           margin-top: -25%;
+        }
+        .closeOpSet {
+          height: 25%;
+        }
+      }
+      
+      @media screen and (min-width: 368px) {
+        #live-display {
+          width: 92%;
+          height: 200px;
+          margin-top: 9%;
+        }
+        
+        #priview-display {
+          height: 100px;
+          padding: 0;
+          margin-top: 7%;
+          margin-bottom: 10%;
+        }
+        
+        #live-displaymini {
+          height: 100px;
+          padding: 0;
+          margin-top: 7%;
+          margin-bottom: 10%;
+        }
+        
+        #textLiveMini {
+          font-size: .8em;
+          overflow: hidden;
+        }
+        
+        .navbar {
+          height: 3rem;
+          padding-bottom: 0;
+          margin: 0;
+        }
+        
+        .nav-links {
+          display: flex;
+          background: #2a2a2a;
+          width: 60%;
+          height: 100%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          left: -200%;
+          gap: 15px;
+          flex-direction: column;
+          transition: all 0.2s ease;
+        }
+        
+        .menu-icon {
+          margin: 1%;
+        }
+        
+        .active {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        .control-song {
+          width: 108%;
+        }
+        
+        #goLive {
+          padding: 10px;
+        }
+        
+        #btnOpen {
+          padding: 6px 13px;
+        }
+        
+        #help {
+          padding: 12px 20px;
+        }
+        
+        /*.con-scroll {
+                    width: 108%;
+                }*/
+        .scroll-bar {
+          text-align: left;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 43vh;
+          font-size: .8em;
+          
+          margin-top: 2%;
+        }
+        
+        .back,
+        .next {
+          margin: 20px;
+        }
+        
+        .song-title {
+          font-size: 0.7em;
+        }
+      }
+      
+      @media screen and (min-width: 568px) {
+        #live-display {
+          padding: 0;
+          width: 75%;
+          height: 250px;
+          margin-top: 8%;
+        }
+        
+        #priview-display {
+          height: 125px;
+          padding: 0;
+          margin-top: 6%;
+        }
+        
+        #live-displaymini {
+          height: 125px;
+          padding: 0;
+          margin-top: 6%;
+        }
+        
+        .navbar {
+          height: 3rem;
+          padding-bottom: 2%;
+        }
+        
+        .nav-links {
+          display: flex;
+          background: #2a2a2a;
+          width: 60%;
+          height: 100%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          left: -200%;
+          gap: 20px;
+          flex-direction: column;
+          transition: all 0.2s ease;
+        }
+        
+        .active {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        #goLive {
+          margin: 1.5%;
+        }
+        
+        .back,
+        .next {
+          margin: 20px;
+        }
+        
+        .control-song {
+          width: 105%;
+        }
+        
+        .con-scroll {}
+        
+        .scroll-bar {
+          text-align: left;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 53vh;
+          font-size: .6em;
+        }
+        .marTopBS {
+           margin-top: -60%;
+         }
+      }
+      
+      @media screen and (min-width: 768px) {
+        #live-display {
+          padding: 0;
+          width: 70%;
+          height: 300px;
+          margin-top: 6%;
+        }
+        
+        #priview-display {
+          height: 150px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        #live-displaymini {
+          height: 150px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        .navbar {
+          height: 3rem;
+          padding-bottom: 2%;
+        }
+        
+        .nav-links {
+          display: flex;
+          background: #2a2a2a;
+          width: 60%;
+          height: 100%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          left: -200%;
+          gap: 15px;
+          flex-direction: column;
+          transition: all 0.2s ease;
+        }
+        
+        .active {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        #goLive {
+          margin: 1.5%;
+        }
+        
+        .back,
+        .next {
+          margin: 20px;
+        }
+        
+        .control-song {
+          width: 103%;
+        }
+        
+        
+        .scroll-bar {
+          text-align: left;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 37vh;
+          font-size: 1em;
+        }
+        
+        select {
+          width: 180px;
+          padding: 15px;
+          font-size: 2em;
+        }
+        
+        .labelTemp {
+          font-size: 1.5em;
+        }
+        
+        #bgTemplate {
+          width: 100px;
+          height: 50px;
+        }
+        
+        #mediaInputLabel {
+          font-size: 1em;
+          padding: 10px;
+          margin: 0;
+        }
+        
+        .iconMusic {
+          font-size: 1.5em;
+        }
+        #nameSongDown {
+          font-size: 1em;
+        }
+        
+        #help {
+          font-size: 1em;
+          padding: 10px 30px;
+        }
+        
+        .reqSong {
+          font-size: 1.6em;
+        }
+        
+        #closeNav {
+          width: 20px;
+          height: 20px;
+          font-size: 2em;
+        }
+        
+        #openSetting {
+          font-size: 2em;
+        }
+        .option-lv, .option-posX, .option-posY, .option-Ff, .option-Fa, .option-Fs, .option-posXLm, .option-posYLm, .option-FsLm, .option-FfLm, .option-alert {
+          margin-top: 2%;
+        }
+        
+        .marTopBS {
+           margin-top: -30%;
+        }
+      }
+      
+      
+      @media screen and (min-width: 1084px) {
+        #live-display {
+          padding: 0;
+          height: 280px;
+          width: 55%;
+          margin-top: 6%;
+        }
+        
+        #priview-display {
+          height: 140px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        #live-displaymini {
+          height: 140px;
+          padding: 0;
+          margin-top: 5%;
+        }
+        
+        .navbar {
+          height: 3.5rem;
+        }
+        
+        .nav-links {
+          display: flex;
+          background: #2a2a2a;
+          width: 60%;
+          height: 100%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          left: -200%;
+          gap: 15px;
+          flex-direction: column;
+          transition: all 0.2s ease;
+        }
+        
+        .active {
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        
+        .scroll-bar {
+          text-align: left;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 38vh;
+          font-size: 1em;
+          margin-top: 2%;
+        }
+        
+        .next,
+        .back {
+          margin: 20px;
+        }
+        
+        .control-song {
+          width: 103%;
+        }
+        
+        .song-title {
+          font-size: 1.2em;
+        }
+        
+        #mediaInputLabel {
+          font-size: 1em;
+          padding: 5px;
+        }
+        
+        #help {
+          font-size: 1em;
+          padding: 20px 30px;
+        }
+        #bgTemplate {
+          width: 100px;
+          height: 50px;
+        }
+        
+        .colorTemp {
+          width: 80px;
+          height: 60px;
+        }
+        .marTopBS {
+           margin-top: -30%;
+        }
+        .option-lv, .option-posX, .option-posY, .option-Ff, .option-Fa, .option-Fs, .option-posXLm, .option-posYLm, .option-FsLm, .option-FfLm, .option-alert {
+          margin-top: 2%;
+        }
+      }
