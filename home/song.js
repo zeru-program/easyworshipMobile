@@ -3,6 +3,11 @@ function tampilkanSong() {
   var priview = document.querySelector(".changeTimelinePriv");
   var live = document.querySelector(".changeTimelineLive");
   var titleS = document.querySelector(".song-title");
+  if (songs === "Pilih lagu") {
+     titleS.textContent = "Chose the song first!";
+     live.innerHTML = "";
+     priview.innerHTML = "";
+  }
   if (songs === "songs1") {
       titleS.textContent = "Kemenangan Atasku - NLY";
     live.innerHTML = `<div class="borV">
