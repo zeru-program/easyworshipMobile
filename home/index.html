@@ -49,7 +49,9 @@
                 ></label>
                 <div class="conPAW">
                     <select id="songsIsi" onchange="tampilkanSong()">
-                        <option style="display: none">Pilih lagu</option>
+                        <option value="songs0" style="display: none">
+                            Pilih lagu
+                        </option>
                         <option value="songs15">Ajaib Kau Tuhan - JPCC</option>
                         <option value="songs5">Karna Mu - JPCC</option>
                         <option value="songs9">Kumilikmu - JPCC</option>
@@ -254,7 +256,8 @@
                 Click
                 <a style="color: #416ee6" onclick="toHelp()">here</a></label
             >
-             for tutorial how to use and keyboard shortcut easyworship mobile by zeru <br />
+            for tutorial how to use and keyboard shortcut easyworship mobile by
+            zeru <br />
             <label style="color: #5a5a5a">click anywhere to close popup</label>
         </div>
         <div class="containerSetting">
@@ -925,10 +928,12 @@
 
             var tL = document.getElementById("textLive");
             var tLM = document.getElementById("textLiveMini");
+            var tLP = document.getElementById("textPriviewMini");
             var btnC = document.getElementById("clear");
             var btnB = document.getElementById("black");
             var btnL = document.getElementById("logo");
-            var tLP = document.getElementById("textPriviewMini");
+            var livdis = document.getElementById("live-display");
+            var livdisMini = document.getElementById("live-displaymini");
             var priviewMiniD = document.getElementById("priview-display");
             var selectedSong = null;
             var cleared = false; // Variabel untuak menandai apakah tombol clear sudah diklik
@@ -984,7 +989,16 @@
                 selectedSongP = clickedElement;
                 clearedP = false; // Setelah mengganti teks, reset variabel cleared
             }
-
+            function blankLsText() {
+                tL.innerHTML = "";
+                tLM.innerHTML = "";
+                livdis.style.background = "black";
+                livdisMini.style.background = "black";
+            }
+            function blankPvText() {
+                tLP.innerHTML = "";
+                priviewMiniD.style.background = "black";
+            }
             //sistem click on opsi setting
             const opsi1 = document.getElementById("opsi1");
             const opsi2 = document.getElementById("opsi2");
@@ -1997,10 +2011,10 @@
                     selectedSong = prevElement;
                 }
                 if (e.key === "ArrowUp") {
-                  backButton.click();
+                    backButton.click();
                 }
                 if (e.key === "ArrowDown") {
-                  nextButton.click();
+                    nextButton.click();
                 }
             });
 
