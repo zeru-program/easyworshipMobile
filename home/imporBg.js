@@ -31,15 +31,10 @@ function handleMediaChange() {
       videoElement.style.width = "100%";
       videoElement.style.height = "100%";
       videoElement.style.objectFit = "cover";
+      videoElement.style.position = "absolute";
 
-      // Remove any previous video element
-      var previousVideo = liveDis.querySelector("video");
-      if (previousVideo) {
-        liveDis.removeChild(previousVideo);
-      }
-      if (!isAppend) {
         liveDis.appendChild(videoElement);
-      }
+      
 
       isAppend = true;
     }
