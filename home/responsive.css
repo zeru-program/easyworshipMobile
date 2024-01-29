@@ -189,7 +189,7 @@
         #live-display {
           width: 92%;
           height: 200px;
-          margin-top: 9%;
+          margin-top: 10%;
         }
         
         #priview-display {
@@ -245,7 +245,9 @@
         .control-song {
           width: 108%;
         }
-        
+        select {
+          font-size: .7em;
+        }
         #goLive {
           padding: 10px;
         }
@@ -253,7 +255,19 @@
         #btnOpen {
           padding: 6px 13px;
         }
-        
+        #mediaInputLabel {
+          font-size: .6em;
+          padding: 10px;
+        }
+        .conSaveOption {
+          font-size: .7em;
+        }
+        .reqSong {
+          font-size: .7em;
+        }
+        .contact {
+          font-size: .7em;
+        }
         #help {
           padding: 12px 20px;
         }
@@ -276,9 +290,26 @@
         .next {
           margin: 20px;
         }
+        .labelTemp {
+          font-size: .8em;
+        }
         
         .song-title {
           font-size: 0.7em;
+        }
+        .inputOpt, .tcolor-input ,.tcolorLm-input{
+          width: 150px;
+          font-size: .7em;
+        }
+        .fz-input, .fzLm-input, .tshadow-input, .tshadowM-input, .marright-input, .marleft-input, .marbottom-input, .martop-input{
+          width: 110px;
+          font-size: .8em;
+        }
+        .inputOptMini {
+          font-size: .6em;
+        }
+        .boxSetting {
+          font-size: .8em;
         }
       }
       
@@ -359,7 +390,7 @@
       @media screen and (min-width: 768px) {
         #live-display {
           padding: 0;
-          width: 70%;
+          width: 60%;
           height: 300px;
           margin-top: 6%;
         }
@@ -435,7 +466,7 @@
         }
         
         .labelTemp {
-          font-size: 1.5em;
+          font-size: 1em;
         }
         
         #bgTemplate {
@@ -488,7 +519,7 @@
         #live-display {
           padding: 0;
           height: 280px;
-          width: 55%;
+          width: 50%;
           margin-top: 6%;
         }
         
