@@ -3,13 +3,18 @@ function tampilkanSong() {
   var priview = document.querySelector(".changeTimelinePriv");
   var live = document.querySelector(".changeTimelineLive");
   var titleS = document.querySelector(".song-title");
-  if (songs === "Pilih lagu") {
-     titleS.textContent = "Chose the song first!";
-     live.innerHTML = "";
-     priview.innerHTML = "";
-  }
-  if (songs === "songs1") {
-      titleS.textContent = "Kemenangan Atasku - NLY";
+  if (songs === "songs0") {
+    titleS.textContent = 'Blank';
+    live.innerHTML = `
+    <p class="song" onclick="blankLsText()">
+    <br> <br>
+    </p>`;
+    priview.innerHTML = `
+    <p class="song" onclick="blankPvText()">
+    <br> <br>
+    </p>`;
+  } else if (songs === "songs1") {
+    titleS.textContent = "Kemenangan Atasku - NLY";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -171,7 +176,7 @@ function tampilkanSong() {
     </p>
 </div>`;
   } else if (songs === "songs3") {
-titleS.textContent = "Teramat Baik - NLY";
+    titleS.textContent = "Teramat Baik - NLY";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -259,7 +264,7 @@ titleS.textContent = "Teramat Baik - NLY";
 </div>
 `;
   } else if (songs === "songs4") {
-  titleS.textContent = "Tuhan Diatas S'galanya - NLY";
+    titleS.textContent = "Tuhan Diatas S'galanya - NLY";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -420,7 +425,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs6") {
-  titleS.textContent = "Kau Rajaku - JPCC";
+    titleS.textContent = "Kau Rajaku - JPCC";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -470,7 +475,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs7") {
-  titleS.textContent = "Sampai Akhir Hidupku - JPCC";
+    titleS.textContent = "Sampai Akhir Hidupku - JPCC";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -569,7 +574,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs8") {
-  titleS.textContent = "Hanya Kau Tuhan - NL";
+    titleS.textContent = "Hanya Kau Tuhan - NL";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -791,7 +796,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs10") {
-  titleS.textContent = "Kau Allah Yang Setia - NL";
+    titleS.textContent = "Kau Allah Yang Setia - NL";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -898,7 +903,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs11") {
-   titleS.textContent = "Mengasihimu - NL";
+    titleS.textContent = "Mengasihimu - NL";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse 1</label>
     <p class="song" onclick="changeText(this)">
@@ -1007,7 +1012,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs12") {
-  titleS.textContent = "Imanuel - JPCC";
+    titleS.textContent = "Imanuel - JPCC";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -1189,7 +1194,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs14") {
-  titleS.textContent = "Yesus Penolongku - JPCC";
+    titleS.textContent = "Yesus Penolongku - JPCC";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse 1</label>
     <p class="song" onclick="changeText(this)">
@@ -1256,7 +1261,7 @@ titleS.textContent = "Teramat Baik - NLY";
 `;
   }
   else if (songs === "songs15") {
-  titleS.textContent = "Ajaib Kau Tuhan - JPCC";
+    titleS.textContent = "Ajaib Kau Tuhan - JPCC";
     live.innerHTML = `<div class="borV">
     <label id="labelV">Verse</label>
     <p class="song" onclick="changeText(this)">
@@ -1350,11 +1355,11 @@ titleS.textContent = "Teramat Baik - NLY";
 </div>
 `;
   }
-/*  else if (songs === "songs15") {
-  titleS.textContent = "Ajaib Kau Tuhan - JPCC";
-    live.innerHTML = ``;
-    priview.innerHTML = ``;
-  }*/
+  /*  else if (songs === "songs15") {
+    titleS.textContent = "Ajaib Kau Tuhan - JPCC";
+      live.innerHTML = ``;
+      priview.innerHTML = ``;
+    }*/
   else {
     live.innerHTML = "";
     titleS.textContent = "choose the song first!";
